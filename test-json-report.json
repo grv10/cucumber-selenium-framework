@@ -1,0 +1,80 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2019-05-21T02:01:09.544Z",
+        "line": 4,
+        "name": "Test Login",
+        "description": "",
+        "id": "data-table-use-for-gmail-login;test-login",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 6085079411,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "Open firefox and start the application",
+            "match": {
+              "location": "SmokeTest.open_firefox_and_start_the_application()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 11874209896,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I enter valid username and invalid password",
+            "match": {
+              "location": "SmokeTest.i_enter_valid_username_and_invalid_password(DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "gauravdwivedi10",
+                  "check123"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 33177712,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "User should get an error message",
+            "match": {
+              "location": "SmokeTest.user_should_get_an_error_message()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 794347128,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "Close the browser",
+            "match": {
+              "location": "SmokeTest.close_the_browser()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Data Table use for Gmail login",
+    "description": "",
+    "id": "data-table-use-for-gmail-login",
+    "keyword": "Feature",
+    "uri": "file:features/DataTableExample.feature",
+    "tags": []
+  }
+]
