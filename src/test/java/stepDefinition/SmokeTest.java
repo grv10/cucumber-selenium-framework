@@ -10,33 +10,43 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import Pages.LoginPage;
+import Util.TestBase;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import io.cucumber.datatable.DataTable;
+import junit.framework.Assert;
 
-public class SmokeTest {
-
+public class SmokeTest extends TestBase{
 	protected WebDriver driver;
+	LoginPage loginpage = new LoginPage();
+	
 
 	@Given("^Open firefox and start the application$")
-	public void open_firefox_and_start_the_application() {
-		driver = new FirefoxDriver();
+	public void open_firefox_and_start_the_application() throws Throwable{
+		/*driver = new FirefoxDriver();
 		driver.manage().window().maximize();
-		driver.get("http://www.gmail.com");
+		driver.get("http://www.gmail.com");*/
+		TestBase.initialize();
 	}
 
 	@When("^I enter valid \"(.*)\" and invalid \"(.*)\"$")
 	public void i_enter_valid_username_and_invalid_password(String username, String password) throws Throwable {
-		//LoginPage.enterCredentials(username, password);	
+		/*//LoginPage.enterCredentials(username, password);	
 		driver.findElement(By.id("identifierId")).sendKeys(username);
 		driver.findElement(By.className("CwaK9")).click();;
 		Thread.sleep(2000);
 		driver.findElement(By.name("password")).sendKeys(password);
 		Thread.sleep(3000);
-		driver.findElement(By.id("passwordNext")).click();	
+		driver.findElement(By.id("passwordNext")).click();	*/
+		String title = loginpage.validateLoginPage();
+		assertEquals("Gmail", title);
+		LoginPage.enterCredentials(username, password);
+		
+		
+		
 	}
 
 	@When("^I enter valid username and invalid password")
